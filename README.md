@@ -45,19 +45,5 @@ oc start-build hello-rest --from-file spring-boot-rest-service/target/hello-rest
 ## Expose the service as route.
 
 ```
-oc expose svc/hello-rest
-route "hello-rest" exposed
+oc expose svc hello-rest
 ```
-
-To see the new route run:
-```
-oc get route
-```
-And check the output:
-```
-NAME         HOST/PORT                                   PATH      SERVICES     PORT       TERMINATION   WILDCARD
-hello-rest   hello-rest-rest-hello.192.168.64.8.nip.io             hello-rest   8080-tcp                 None
-```
-# Reference
-
-[s2i for jdk image documentation](https://access.redhat.com/documentation/en-us/red_hat_jboss_middleware_for_openshift/3/html-single/red_hat_java_s2i_for_openshift/index)
